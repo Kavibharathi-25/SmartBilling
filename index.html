@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Billing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>🍽️ Crown Restaurant</header>
+
+<main class="app">
+
+  <!-- MENU -->
+  <section class="menu">
+    <h2>📋 Touch Menu</h2>
+    <div id="menuList" class="menu-grid"></div>
+  </section>
+
+  <!-- BILL -->
+  <section class="bill">
+    <h2>🧾 Bill</h2>
+    <ul id="cartList"></ul>
+
+    <div class="total">
+      Total: ₹<span id="total">0</span>
+    </div>
+
+    <button class="btn pay" onclick="payNow()">💳 Pay Now</button>
+    <button class="btn pay" onclick="payCash()">💵 Cash</button>
+    <button class="btn print" onclick="printBill()">🖨️ Print Bill</button>
+    <button class="btn clear" onclick="clearCart()">❌ Clear Cart</button>
+  </section>
+
+  <!-- TODAY SALES -->
+  <section class="report">
+    <h2>📊 Today Sales</h2>
+    <p>Total Orders: <b id="orders">0</b></p>
+    <p>Today Collection: ₹<b id="todaySales">0</b></p>
+  </section>
+
+  <!-- MANAGE MENU -->
+  <section class="manage">
+    <h2>➕ Add Menu Item</h2>
+    <input type="text" id="itemName" placeholder="Item Name">
+    <input type="number" id="itemPrice" placeholder="Price">
+    <input type="text" id="itemImg" placeholder="Image URL">
+    <button class="btn pay" onclick="addMenuItem()">Add Item</button>
+  </section>
+
+</main>
+
+<!-- QR MODAL -->
+<div class="modal" id="qrModal">
+  <div class="modal-box">
+    <h3>Scan & Pay</h3>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay" />
+    <button class="btn clear" onclick="closeQR()">Close</button>
+  </div>
+</div>
+
+<footer>
+  Monthly Sales: ₹<span id="sales">0</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
