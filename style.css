@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===================== BODY ===================== */
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #eaeaea;
+}
+
+/* ===================== HEADER ===================== */
+header {
+  background: rgba(15, 32, 39, 0.85);
+  color: #f5f5f5;
+  text-align: center;
+  padding: 18px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.35);
+  box-shadow: 0 8px 35px rgba(0,0,0,0.45);
+  border-radius: 0 0 22px 22px;
+  letter-spacing: 1px;
+}
+
+/* ===================== APP LAYOUT ===================== */
+.app {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 22px;
+}
+
+@media (max-width: 1024px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================== PREMIUM GLASS CARDS ===================== */
+.menu,
+.bill,
+.report,
+.manage {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border-radius: 26px;
+  padding: 22px;
+  border: 1px solid rgba(255,215,0,0.25);
+  box-shadow:
+    14px 14px 35px rgba(0,0,0,0.55),
+    -10px -10px 30px rgba(255,255,255,0.08);
+  transition: all 0.35s ease;
+}
+
+.menu:hover,
+.bill:hover,
+.report:hover,
+.manage:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    18px 18px 45px rgba(0,0,0,0.65),
+    -12px -12px 35px rgba(255,255,255,0.12);
+}
+
+/* ===================== MENU GRID ===================== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 18px;
+}
+
+.menu-card {
+  background: rgba(255,255,255,0.16);
+  border-radius: 22px;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,215,0,0.25);
+  box-shadow:
+    8px 8px 22px rgba(0,0,0,0.6),
+    -6px -6px 18px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: scale(1.08);
+  box-shadow:
+    10px 10px 30px rgba(255,215,0,0.35),
+    -8px -8px 25px rgba(255,255,255,0.15);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.menu-card h4 {
+  margin: 8px 0 4px;
+  font-size: 1rem;
+  color: #ffd700;
+}
+
+.menu-card p {
+  font-weight: bold;
+  color: #7CFC00;
+}
+
+/* ===================== BILL ===================== */
+.bill ul {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.bill li {
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255,215,0,0.3);
+  font-size: 0.95rem;
+}
+
+.total {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin: 14px 0;
+}
+
+/* ===================== BUTTONS ===================== */
+.btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    6px 6px 18px rgba(0,0,0,0.6),
+    -5px -5px 16px rgba(255,255,255,0.1);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.pay {
+  background: linear-gradient(135deg, #ffd700, #ffb300);
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.print {
+  background: linear-gradient(135deg, #1e88e5, #0d47a1);
+  color: white;
+}
+
+.clear {
+  background: linear-gradient(135deg, #ef5350, #b71c1c);
+  color: white;
+}
+
+/* ===================== INPUTS ===================== */
+.manage input {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,215,0,0.35);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow:
+    inset 4px 4px 8px rgba(0,0,0,0.5),
+    inset -4px -4px 8px rgba(255,255,255,0.1);
+}
+
+.manage input::placeholder {
+  color: #ddd;
+}
+
+.manage input:focus {
+  outline: none;
+  border-color: #ffd700;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  margin-top: auto;
+  background: rgba(0,0,0,0.85);
+  color: #ffd700;
+  text-align: center;
+  padding: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.6);
+}
+
+/* ===================== MODAL ===================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  padding-top: 50px;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(22px);
+  padding: 24px;
+  width: 90%;
+  max-width: 340px;
+  margin: auto;
+  border-radius: 26px;
+  text-align: center;
+  border: 1px solid rgba(255,215,0,0.35);
+  box-shadow:
+    12px 12px 35px rgba(0,0,0,0.6),
+    -10px -10px 30px rgba(255,255,255,0.12);
+}
+
+.report,
+.manage {
+  margin-top: 18px;
+}
